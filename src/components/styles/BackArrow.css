@@ -1,0 +1,8 @@
+.back-arrow {
+  border: 7.5px solid black;
+  width: 30px;
+  height: 30px;
+  border-right: transparent;
+  border-top: transparent;
+  transform: rotate(45deg);
+}

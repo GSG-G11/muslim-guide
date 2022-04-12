@@ -1,0 +1,7 @@
+{
+  "files.eol": "\n",
+  "git.ignoreLimitWarning": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
