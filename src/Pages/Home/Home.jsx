@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '../../components';
+import logo from '../../assets/logo.png';
+import pray from '../../assets/pray.png';
+import quran from '../../assets/quran.png';
+import hands from '../../assets/hands.png';
+import mosque from '../../assets/mosque.png';
 
 function Home() {
   const navigate = useNavigate();
@@ -12,9 +16,8 @@ function Home() {
     <>
       <div className="header">
         <img
-          onClick={() => navigate('/')}
           className="logo"
-          src="https://play-lh.googleusercontent.com/tXqP0knYe0kebB7IfdrVuMq8mAQEUPNf6R8IH1aR38evurTx1eTwR8VRmDpCIpvi7Go"
+          src={logo}
           alt="logo"
         />
         <h3 className="header-title">السلام عليكم</h3>
@@ -23,7 +26,7 @@ function Home() {
       <main>
         <Container>
           <section className="next-prayer-card">
-            <img src="https://i.imgur.com/tQLsGiS.png?1" alt="mosque-icon" />
+            <img src={mosque} alt="mosque-icon" />
 
             <div className="text">
               <p className="zekr">أستغفر الله العظيم</p>
@@ -37,7 +40,7 @@ function Home() {
           <section className="categories-cards">
             <div className="category-card" onClick={() => navigate('/azkar')}>
               <img
-                src="https://i.imgur.com/LeNiWrd.png"
+                src={hands}
                 alt="pray-hands"
                 className="category-image"
               />
@@ -45,7 +48,7 @@ function Home() {
             </div>
             <div className="category-card" onClick={() => navigate('/prayer')}>
               <img
-                src="https://i.imgur.com/Gjx0KaC.png"
+                src={pray}
                 alt="pray-hands"
                 className="category-image"
               />
@@ -53,7 +56,7 @@ function Home() {
             </div>
             <div className="category-card" onClick={() => navigate('/quran')}>
               <img
-                src="https://i.imgur.com/oYqxHtJ.png"
+                src={quran}
                 alt="pray-hands"
                 className="category-image"
               />
