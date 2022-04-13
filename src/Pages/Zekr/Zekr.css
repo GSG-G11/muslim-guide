@@ -1,5 +1,5 @@
 .zekr-cards {
-  margin-top: 5rem;
+  margin-block: 5rem;
   text-align: center;
 }
 .zekr-cards .container {
@@ -7,8 +7,8 @@
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 4rem;
+  align-items: flex-start;
 }
 
 .zekr-cards .zekr-card {
@@ -56,6 +56,5 @@
 @media (min-width: 767px) {
   .zekr-cards .zekr-card {
     width: 45%;
-    height: 27rem;
   }
 }

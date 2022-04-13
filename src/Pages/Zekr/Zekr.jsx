@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { useParams } from 'react-router-dom';
 import Header from '../../components/Header';
-import './Zekr.css';
 import { Container } from '../../components';
 
+import './Zekr.css';
+
 function Zekr({ azkar }) {
-  const selectedAzkar = azkar.filter(({ category }) => category === 'أذكار الصباح');
+  const { category } = useParams();
+
+  const selectedAzkar = azkar.filter((zekr) => zekr.category === category);
 
   return (
     <>
@@ -22,7 +27,7 @@ function Zekr({ azkar }) {
               <p className="zekr-text">{zekr}</p>
               <div className="description">{description}</div>
               <div className="repeat">
-                <span className="repeat-count">{count}</span>
+                <span className="repeat-count">{count || 1}</span>
                 <span>:عدد مرات التكرار</span>
               </div>
             </div>
@@ -42,7 +47,6 @@ Zekr.propTypes = {
       zekr: PropTypes.string.isRequired,
     }),
   ).isRequired,
-
 };
 
 export default Zekr;

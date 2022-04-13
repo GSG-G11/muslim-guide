@@ -1,0 +1,67 @@
+.prayer-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prayer-container form{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.prayer-container input {
+  width: 80%;
+  text-align: right;
+  box-shadow: inset 0px 0.4rem 1rem #8e8e8e, 0px 0px 0px;
+  padding: 0 1rem;
+  outline: none;
+  margin-bottom: 2rem;
+}
+.prayer-city-name,
+.prayer-date-for {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.prayer-date-for {
+  margin-bottom: 2rem;
+}
+.prayer-name-time-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: #00a3ff;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+.prayer-name-time-container .prayer-name-time {
+  padding: 1rem 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.prayer-name-time-container .prayer-name-time:after {
+  content: '';
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  height: 1px;
+  width: 80%;
+}
+.isha:after {
+  all: unset !important;
+}
+.prayer-name-time .prayer-time,
+.prayer-name-time .prayer-name {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fff;
+}
+.prayer-error-message {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 20rem;
+  text-align: center;
+}
