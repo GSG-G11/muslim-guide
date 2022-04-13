@@ -3,6 +3,7 @@
 .notFound {
   background: radial-gradient(#000, #111);
   color: white;
+  height: 100vh;
 }
 
 .static {
