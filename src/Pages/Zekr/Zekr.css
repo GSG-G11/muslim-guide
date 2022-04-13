@@ -1,0 +1,60 @@
+.zekr-cards {
+  margin-block: 5rem;
+  text-align: center;
+}
+.zekr-cards .container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.zekr-cards .zekr-card {
+  border: 1px solid green;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.zekr-card .zekr-text {
+  font-weight: bold;
+}
+.zekr-card .number {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.zekr-card .description {
+  color: rgb(43, 43, 43);
+  text-align: right;
+}
+
+.zekr-card .repeat {
+  text-align: right;
+}
+
+.zekr-card .repeat .repeat-count {
+  color: white;
+  font-weight: bold;
+  width: 25px;
+  text-align: center;
+  display: inline-block;
+  line-height: 2.1;
+  height: 25px;
+  background-color: green;
+  border-radius: 18px;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 767px) {
+  .zekr-cards .zekr-card {
+    width: 45%;
+  }
+}

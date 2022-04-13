@@ -31,10 +31,10 @@
 
 @media (min-width: 767px) {
   .azkar-cards .container {
-    gap: 7rem;
+    gap: 5.5rem;
   }
   .azkar-cards .azkar-card {
     flex-basis: 45%;
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
