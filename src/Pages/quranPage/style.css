@@ -1,0 +1,63 @@
+.quran-main-container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quran-container {
+  position: relative;
+}
+.quran-frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.quran-frame .frame {
+  width: 90%;
+}
+.quran-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.page {
+  width: 33rem;
+}
+
+.page-counter {
+  position: relative;
+  margin-top: 3rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.prev,
+.next,
+.page-number {
+  background-color: unset;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.prev,
+.next {
+  transform: rotate(0.5turn);
+}
+.page-number {
+  font-size: 1.7rem;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@media (max-width: 470px) {
+  .page {
+    width: 25rem;
+  }
+  .page-number {
+    top: -51px;
+  }
+}

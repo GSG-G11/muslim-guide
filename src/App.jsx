@@ -6,6 +6,7 @@ import {
 } from './Pages';
 
 import './App.css';
+import Quran from './Pages/quranPage/Quran';
 
 function App() {
   const [azkar, setAzkar] = useState([]);
@@ -22,8 +23,8 @@ function App() {
         <Route index element={<Azkar getAzkar={getAzkar} />} />
         <Route path=":category" element={<Zekr azkar={azkar} />} />
       </Route>
-
       <Route path="/prayer" element={<Prayer />} />
+      <Route path="/quran" element={<Quran />} />
     </Routes>
   );
 }
