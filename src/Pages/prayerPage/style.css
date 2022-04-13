@@ -4,19 +4,25 @@
   flex-direction: column;
   align-items: center;
 }
-.prayer-container form{
+.prayer-container form {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 .prayer-container input {
-  width: 80%;
-  text-align: right;
-  box-shadow: inset 0px 0.4rem 1rem #8e8e8e, 0px 0px 0px;
-  padding: 0 1rem;
-  outline: none;
+  margin-top: 2rem;
   margin-bottom: 2rem;
+  width: 90%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 20px 0px #aaa;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  caret-color: red;
+  text-align: right;
+  transition: all 0.5s;
 }
+
 .prayer-city-name,
 .prayer-date-for {
   font-size: 2.5rem;
@@ -28,7 +34,8 @@
 .prayer-name-time-container {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
+  align-items: center;
   background-color: #00a3ff;
   padding: 1rem 2rem;
   border-radius: 2rem;
