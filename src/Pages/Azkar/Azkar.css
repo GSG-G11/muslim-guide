@@ -1,0 +1,40 @@
+.azkar-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.azkar-cards .container {
+  justify-items: center;
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.azkar-cards .azkar-card {
+  color: white;
+  padding: 1rem 4rem;
+  flex-basis: 100%;
+  border-radius: 1rem;
+  font-size: 2.1rem;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.azkar-cards .azkar-card:hover {
+  filter: drop-shadow(2px 4px 6px #aaa);
+}
+
+@media (min-width: 767px) {
+  .azkar-cards .container {
+    gap: 7rem;
+  }
+  .azkar-cards .azkar-card {
+    flex-basis: 45%;
+    font-size: 3rem;
+  }
+}
