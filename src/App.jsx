@@ -6,6 +6,7 @@ import {
 } from './Pages';
 
 import './App.css';
+import NotFound from './Pages/404/404';
 
 function App() {
   const [azkar, setAzkar] = useState([]);
@@ -24,6 +25,7 @@ function App() {
       </Route>
 
       <Route path="/prayer" element={<Prayer />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
