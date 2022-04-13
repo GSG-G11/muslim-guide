@@ -14,7 +14,9 @@ function Zekr({ azkar }) {
 
   return (
     <>
-      <Header>أذكار الصباح</Header>
+      <Header>
+        {category}
+      </Header>
       <div className="zekr-cards">
         <Container>
           {selectedAzkar.map(({ count, description, zekr }, i) => (
