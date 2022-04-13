@@ -1,0 +1,114 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 0.5rem;
+  box-shadow: 0 0 20px 0 #aaa;
+}
+
+.header img.logo {
+  width: 7.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.header img.logo:hover {
+  filter: brightness(0.5);
+}
+
+@media (min-width: 767px) {
+  .header {
+    padding-inline: 2rem;
+  }
+  .header .header-title {
+    font-size: 2rem;
+  }
+
+  .header img.logo {
+    width: 10rem;
+  }
+}
+
+/* Home */
+main {
+  margin: 5rem auto;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+main .next-prayer-card {
+  margin: 0 auto;
+  display: flex;
+  background-color: #79ebaf;
+  width: fit-content;
+  padding: 4rem 3rem;
+  border-radius: 4rem;
+  justify-content: space-between;
+}
+
+main .next-prayer-card img {
+  width: 50%;
+}
+
+main .next-prayer-card .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+main .next-prayer-card .prayer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media (min-width: 767px) {
+  main {
+    font-size: 2rem;
+  }
+}
+
+main .categories-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: 5rem;
+  margin-top: 5rem;
+  font-size: 1.7rem;
+}
+main .categories-cards .category-card {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: filter 0.2s;
+}
+
+main .categories-cards .category-card:hover {
+  filter: drop-shadow(2px 4px 6px #aaa);
+}
+main .categories-cards .category-card .category-image {
+  width: 7rem;
+}
+
+main .categories-cards .category-card:first-child {
+  background-color: #4eb6f5;
+}
+
+main .categories-cards .category-card:nth-child(2) {
+  background-color: #ff806d;
+}
+main .categories-cards .category-card:last-child {
+  background-color: #ffbc3a;
+}
+
+@media (min-width: 767px) {
+  main .categories-cards {
+    font-size: 2.5rem;
+  }
+}
