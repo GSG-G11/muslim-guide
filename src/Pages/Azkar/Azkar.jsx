@@ -8,7 +8,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import { Container } from '../../components';
-import getColor from '../../utils';
+import colors from '../../colors.json';
 
 import './Azkar.css';
 
@@ -36,8 +36,11 @@ function Azkar({ getAzkar }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchedZekr = input.current.value.trim().replace('ا', 'أ');
-    setFilteredAzkar(azkar.filter(({ category }) => category.includes(searchedZekr)));
+    const searchedZekr = input.current.value.trim().split('');
+    if (searchedZekr[0] === 'ا' && searchedZekr[1] !== 'ل') {
+      searchedZekr[0] = 'أ';
+    }
+    setFilteredAzkar(azkar.filter(({ category }) => category.includes(searchedZekr.join(''))));
   };
 
   return (
@@ -56,7 +59,7 @@ function Azkar({ getAzkar }) {
               key={category}
               type="button"
               className="azkar-card"
-              style={{ background: getColor() }}
+              style={{ background: colors[Math.floor(Math.random() * colors.length)] }}
             >
               {category}
             </div>
