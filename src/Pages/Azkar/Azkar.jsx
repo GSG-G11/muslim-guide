@@ -2,9 +2,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { Outlet, useNavigate } from 'react-router-dom';
+
 import Header from '../../components/Header';
 import { Container } from '../../components';
 import getColor from '../../utils';
@@ -13,36 +14,46 @@ import './Azkar.css';
 
 function Azkar({ getAzkar }) {
   const navigate = useNavigate();
-
+  const input = useRef();
   const [azkar, setAzkar] = useState([]);
+  const [filteredAzkar, setFilteredAzkar] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchAzkar = async () => {
-      const { data } = await axios(
-        'https://raw.githubusercontent.com/osamayy/azkar-db/master/azkar.json',
-      );
+      const azkarUrl = 'https://raw.githubusercontent.com/osamayy/azkar-db/master/azkar.json';
+      const { data } = await axios(azkarUrl);
+
       setAzkar(data);
+      setFilteredAzkar(data);
       getAzkar(data);
     };
 
     fetchAzkar().catch(() => setError('oops,something went wrong, please try again later!!'));
   }, []);
 
-  if (error) {
-    return <div className="errorMsg">{error}</div>;
-  }
+  if (error) return <div className="errorMsg">{error}</div>;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const searchedZekr = input.current.value.trim().replace('ا', 'أ');
+    setFilteredAzkar(azkar.filter(({ category }) => category.includes(searchedZekr)));
+  };
 
   return (
     <>
       <Header>اذكار المسلم</Header>
+
+      <form className="searchAzkarForm" onSubmit={handleSubmit}>
+        <input className="searchAzkarInput" type="search" ref={input} lang="ar" placeholder="ابحث عن اﻷذكار" />
+      </form>
+
       <div className="azkar-cards">
         <Container>
-          {[...new Set(azkar.map(({ category }) => category))].map((category) => (
+          {[...new Set(filteredAzkar.map(({ category }) => category))].map((category) => (
             <div
               onClick={() => navigate(`${category}`)}
               key={category}
-              id={category}
               type="button"
               className="azkar-card"
               style={{ background: getColor() }}
