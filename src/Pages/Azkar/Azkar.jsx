@@ -32,7 +32,13 @@ function Azkar() {
       <div className="azkar-cards">
         <Container>
           {[...new Set(azkar.map(({ category }) => category))].map((category) => (
-            <div key={category} className="azkar-card" style={{ background: getColor() }}>
+            <div
+              key={category}
+              id={category}
+              type="button"
+              className="azkar-card"
+              style={{ background: getColor() }}
+            >
               {category}
             </div>
           ))}
