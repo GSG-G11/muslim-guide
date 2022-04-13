@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import {
-  Azkar, Home, Prayer, Zekr,
+  Azkar, Home, Prayer, Zekr, Quran,
 } from './Pages';
 
 import './App.css';
-import Quran from './Pages/quranPage/Quran';
 
 function App() {
   const [azkar, setAzkar] = useState([]);

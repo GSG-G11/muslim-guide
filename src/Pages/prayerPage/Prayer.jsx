@@ -7,9 +7,9 @@ import {
 } from 'react';
 import colors from '../../colors.json';
 import { Container, Input } from '../../components';
+import Header from '../../components/Header';
 import PrayerTime from '../../components/PrayerTime';
 import './style.css';
-import Header from '../../components/Header';
 
 export const PrayerContext = createContext({});
 
@@ -55,6 +55,7 @@ function Prayer() {
       .then(({ data }) => {
         setIsLoading(false);
         setPrayerData({
+          allPrayerData: data.items[0],
           prayerTime: Object.values(data.items[0]) || [],
           prayerName: Object.keys(data.items[0]) || [],
           city: data.query,
@@ -77,11 +78,6 @@ function Prayer() {
   }, [citySubmit, isLoading]);
   return (
     <PrayerContext.Provider value={prayerData}>
-      {/* <div className="header">
-        <BackArrow />
-        <h3 className="header-title">أوقات الصلاة</h3>
-      </div> */}
-
       <Header>أوقات الصلاة</Header>
       <Container>
         <div className="prayer-container">
