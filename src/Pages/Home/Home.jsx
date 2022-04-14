@@ -30,9 +30,26 @@ function Home() {
           </section>
 
           <section className="categories-cards">
-            <RitualCard pathUrl={hands} altText="pray-hands" title="أذكار المسلم" />
-            <RitualCard pathUrl={pray} altText="praying-man" title="الصلوات" />
-            <RitualCard pathUrl={quran} altText="quran-book" title="القران الكريم" />
+            <RitualCard
+              pathUrl={hands}
+              altText="pray-hands"
+              title="أذكار المسلم"
+              route="/azkar"
+            />
+
+            <RitualCard
+              pathUrl={pray}
+              altText="praying-man"
+              title="الصلوات"
+              route="/prayer"
+            />
+
+            <RitualCard
+              pathUrl={quran}
+              altText="quran-book"
+              title="القران الكريم"
+              route="/quran"
+            />
           </section>
         </Container>
       </main>
