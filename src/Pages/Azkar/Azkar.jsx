@@ -44,6 +44,7 @@ function Azkar() {
       </form>
       <div className="azkar-cards">
         <Container>
+          {!filteredAzkar.length && <p className="noAzkarFound">!!  لا يوجد أذكار او أدعية بهذا الاسم</p>}
           {filteredAzkar.map((category, i) => (
             <AzkarCard color={colors[i]} category={category} key={category} />
           ))}
