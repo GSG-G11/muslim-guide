@@ -2,7 +2,7 @@
 
 Muslim Guide is an app that allows you to read different azkar, read pages of the holy quran, check for prayer based on country search
 
-## Live demo [_here_](https://stellular-sprinkles-f255b3.netlify.app/)
+## Live demo [_here_](https://muslim-guide.vercel.app/azkar)
 
 ## Table of Contents
 
