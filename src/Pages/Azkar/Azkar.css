@@ -45,6 +45,12 @@
   text-align: right;
 }
 
+.noAzkarFound {
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
+}
+
 @media (min-width: 767px) {
   .azkar-cards .container {
     gap: 5.5rem;

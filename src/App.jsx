@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import {
-  Azkar, Home, Prayer, Zekr, Quran,
+  Azkar, Home, Prayer, Zekr, Quran, NotFound,
 } from './Pages';
 
 import './App.css';
-import NotFound from './Pages/404/404';
+import ContextProvider from './Context/Context';
 
 function App() {
-  const [azkar, setAzkar] = useState([]);
-
-  const getAzkar = (azkarList) => {
-    setAzkar(azkarList);
-  };
-
   return (
-    <Routes>
-      <Route index element={<Home />} />
+    <ContextProvider>
+      <Routes>
+        <Route index element={<Home />} />
 
-      <Route path="/azkar">
-        <Route index element={<Azkar getAzkar={getAzkar} />} />
-        <Route path=":category" element={<Zekr azkar={azkar} />} />
-      </Route>
-      <Route path="/prayer" element={<Prayer />} />
+        <Route path="/azkar">
+          <Route index element={<Azkar />} />
+          <Route path=":category" element={<Zekr />} />
+        </Route>
 
-      <Route path="*" element={<NotFound />} />
+        <Route path="/prayer" element={<Prayer />} />
 
-      <Route path="/quran" element={<Quran />} />
+        <Route path="*" element={<NotFound />} />
 
-    </Routes>
+        <Route path="/quran" element={<Quran />} />
+
+      </Routes>
+    </ContextProvider>
   );
 }
 

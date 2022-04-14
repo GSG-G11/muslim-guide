@@ -1,12 +1,17 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import './styles/BackArrow.css';
 import { useNavigate } from 'react-router-dom';
 
 function BackArrow() {
   const navigate = useNavigate();
-  return <div className="back-arrow" onClick={() => navigate(-1)} />;
+  return (
+    <button
+      className="back-arrow"
+      onClick={() => navigate(-1)}
+      type="button"
+      aria-label="back arrow button"
+    />
+  );
 }
 
 export default BackArrow;
