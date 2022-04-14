@@ -26,7 +26,7 @@ function ZekrCard({ azkar }) {
 ZekrCard.propTypes = {
   azkar: PropTypes.arrayOf(
     PropTypes.shape({
-      count: PropTypes.number.isRequired,
+      count: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       zekr: PropTypes.string.isRequired,
     }),
