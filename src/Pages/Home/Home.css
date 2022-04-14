@@ -6,7 +6,7 @@
   padding-inline: 3rem;
   box-shadow: 0 0 20px 0 #aaa;
 }
-.header-title{
+.header-title {
   font-size: 2rem;
 }
 .header img.logo {
@@ -89,6 +89,9 @@ main .categories-cards .category-card {
   border-radius: 1.5rem;
   padding: 1.5rem;
   transition: filter 0.2s;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 main .categories-cards .category-card:hover {

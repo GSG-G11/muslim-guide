@@ -5,4 +5,4 @@ export { default as Input } from './Input';
 export { default as Header } from './Header';
 export { default as AzkarCard } from './AzkarCard';
 export { default as ZekrCard } from './ZekrCard';
-export { default as AzkarCategory } from './AzkarCategory';
+export { default as RitualCard } from './RitualCard';

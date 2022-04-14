@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { Container, AzkarCategory } from '../../components';
+import { Container, RitualCard } from '../../components';
 import logo from '../../assets/logo.png';
 import pray from '../../assets/pray.png';
 import quran from '../../assets/quran.png';
@@ -30,9 +30,9 @@ function Home() {
           </section>
 
           <section className="categories-cards">
-            <AzkarCategory pathUrl={hands} altText="pray-hands" title="أذكار المسلم" />
-            <AzkarCategory pathUrl={pray} altText="praying-man" title="الصلوات" />
-            <AzkarCategory pathUrl={quran} altText="quran-book" title="القران الكريم" />
+            <RitualCard pathUrl={hands} altText="pray-hands" title="أذكار المسلم" />
+            <RitualCard pathUrl={pray} altText="praying-man" title="الصلوات" />
+            <RitualCard pathUrl={quran} altText="quran-book" title="القران الكريم" />
           </section>
         </Container>
       </main>
