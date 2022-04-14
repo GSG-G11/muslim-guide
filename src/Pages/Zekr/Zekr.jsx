@@ -1,14 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { Context } from '../../Context/Context';
+
 import Header from '../../components/Header';
 import { Container } from '../../components';
 
 import './Zekr.css';
+import ZekrCard from '../../components/ZekrCard';
 
-function Zekr({ azkar }) {
+function Zekr() {
   const { category } = useParams();
+  const { azkar } = useContext(Context);
 
   const selectedAzkar = azkar.filter((zekr) => zekr.category === category);
 
@@ -19,36 +21,11 @@ function Zekr({ azkar }) {
       </Header>
       <div className="zekr-cards">
         <Container>
-          {selectedAzkar.map(({ count, description, zekr }, i) => (
-            <div key={zekr} className="zekr-card">
-              <span className="number">
-                (
-                {i + 1}
-                )
-              </span>
-              <p className="zekr-text">{zekr}</p>
-              <div className="description">{description}</div>
-              <div className="repeat">
-                <span className="repeat-count">{count || 1}</span>
-                <span>:عدد مرات التكرار</span>
-              </div>
-            </div>
-          ))}
+          <ZekrCard azkar={selectedAzkar} />
         </Container>
       </div>
     </>
   );
 }
-
-Zekr.propTypes = {
-  azkar: PropTypes.arrayOf(
-    PropTypes.shape({
-      category: PropTypes.string.isRequired,
-      count: PropTypes.string.isRequired,
-      description: PropTypes.string,
-      zekr: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-};
 
 export default Zekr;
